@@ -1,8 +1,8 @@
 "use client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Input } from "../ui/input";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 export const SinginForm = () => {
   const router = useRouter();
@@ -15,18 +15,17 @@ export const SinginForm = () => {
 
   return (
     <>
-      <input
+      <Input
         type="email"
         placeholder="Digite seu e-mail"
         value={emailField}
-        onChange={(e) => setEmailField(e.target.value)}
+        onChange={(text) => setEmailField(text)}
       />
-      <FontAwesomeIcon icon={faHeart} />
-      <input
+      <Input
         type="password"
         placeholder="Digite sua senha"
         value={passwordField}
-        onChange={(e) => setPasswordField(e.target.value)}
+        onChange={(text) => setPasswordField(text)}
       />
       <button className="" onClick={handleEnterButton}>
         Entrar

@@ -32,7 +32,7 @@ export const Input = ({
         <FontAwesomeIcon className="size-6 text-gray-500 mr-4" icon={icon} />
       )}
       <input
-        type={type}
+        type={type === "password" && showPassword ? "text" : type}
         className="flex-1 outline-none bg-transparent h-full "
         placeholder={placeholder}
         value={value}

@@ -27,7 +27,9 @@ export const SinginForm = () => {
         value={passwordField}
         onChange={(event) => setPasswordField(event.target.value)}
       />
-      <Button>Entrar</Button>
+      <Button size={1} onClick={handleEnterButton}>
+        Entrar
+      </Button>
     </>
   );
 };

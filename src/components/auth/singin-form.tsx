@@ -10,7 +10,7 @@ export const SinginForm = () => {
   const [passwordField, setPasswordField] = useState("");
 
   const handleEnterButton = () => {
-    router.replace("/home");
+    router.push("/home");
   };
 
   return (

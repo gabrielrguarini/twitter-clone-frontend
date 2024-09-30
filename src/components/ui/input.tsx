@@ -10,8 +10,8 @@ type Props = {
   filled?: boolean;
   icon?: IconDefinition;
   value?: string;
-  onChange?: (newValue: string) => void;
-};
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+} & React.ComponentProps<"input">;
 export const Input = ({
   placeholder,
   filled,
@@ -36,7 +36,9 @@ export const Input = ({
         className="flex-1 outline-none bg-transparent h-full "
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange && onChange(e.target.value)}
+        onChange={(e) => {
+          onChange && onChange(e);
+        }}
       />
       {type === "password" && (
         <FontAwesomeIcon

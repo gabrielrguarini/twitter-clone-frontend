@@ -21,6 +21,7 @@ export const Input = ({
   value,
   onChange,
   onEnter,
+  ...props
 }: Props) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -33,7 +34,7 @@ export const Input = ({
     <div
       className={`has-[:focus]:border-white flex items-center  px-4 py-2 rounded-3xl border-2 border-gray-700 ${
         filled && "bg-gray-700"
-      }`}
+      } ${props.className}`}
     >
       {icon && (
         <FontAwesomeIcon className="size-6 text-gray-500 mr-4" icon={icon} />

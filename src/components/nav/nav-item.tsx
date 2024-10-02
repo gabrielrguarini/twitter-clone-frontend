@@ -12,7 +12,6 @@ type Props = {
 export const NavItem = ({ href, label, icon, active, ...props }: Props) => {
   const pathName = usePathname();
   const isActive = pathName === href;
-  console.log(pathName);
   return (
     <Link
       className={`flex items-center gap-6 py-3 ${

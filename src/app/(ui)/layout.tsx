@@ -5,6 +5,7 @@ import { Logo } from "@/components/ui/logo";
 import { RecommendationArea } from "@/components/ui/recommendation-area";
 import { SearchInput } from "@/components/ui/search-input";
 import { TrendingArea } from "@/components/ui/trending-area";
+import { user } from "@/data/user";
 import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
@@ -19,7 +20,7 @@ export default function Layout({ children }: Props) {
           <Logo size={24} />
           <nav className="mt-11">
             <NavItem href={"/home"} icon={faHouse} label="Página inicial" />
-            <NavItem href={"/profile"} icon={faUser} label="Meu perfil" />
+            <NavItem href={`/profile`} icon={faUser} label="Meu perfil" />
           </nav>
         </div>
         <div className="mb-6 flex flex-col gap-4">

@@ -10,8 +10,9 @@ import { useState } from "react";
 
 type Props = {
   tweet: Tweet;
+  hideComments?: boolean;
 };
-export const TweetItem = ({ tweet }: Props) => {
+export const TweetItem = ({ tweet, hideComments }: Props) => {
   const [liked, setLiked] = useState(tweet.liked);
   return (
     <div className="flex gap-2 p-6 border-b-2 border-gray-900">
@@ -39,33 +40,35 @@ export const TweetItem = ({ tweet }: Props) => {
             <img src={tweet.image} alt="" className="w-full rounded-2xl" />
           </div>
         )}
-        <div className="flex mt-6 text-gray-500">
-          <div className="flex-1">
-            <Link href={`/tweet/${tweet.id}`}>
+        {!hideComments && (
+          <div className="flex mt-6 text-gray-500">
+            <div className="flex-1">
+              <Link href={`/tweet/${tweet.id}`}>
+                <div className="inline-flex items-center gap-2 cursor-pointer">
+                  <FontAwesomeIcon icon={faComment} />
+                  <p className="text-lg">{tweet.commentCount}</p>
+                </div>
+              </Link>
+            </div>
+            <div className="flex-1">
               <div className="inline-flex items-center gap-2 cursor-pointer">
-                <FontAwesomeIcon icon={faComment} />
-                <p className="text-lg">{tweet.commentCount}</p>
+                <FontAwesomeIcon icon={faRetweet} />
+                <p className="text-lg">{tweet.retweetCount}</p>
               </div>
-            </Link>
-          </div>
-          <div className="flex-1">
-            <div className="inline-flex items-center gap-2 cursor-pointer">
-              <FontAwesomeIcon icon={faRetweet} />
-              <p className="text-lg">{tweet.retweetCount}</p>
+            </div>
+            <div className="flex-1">
+              <div
+                onClick={() => setLiked(!liked)}
+                className={`inline-flex items-center gap-2 cursor-pointer transition-colors duration-300 ease-in-out ${
+                  liked && "text-red-500"
+                }`}
+              >
+                <FontAwesomeIcon icon={liked ? faHeartSolid : faHeart} />
+                <p className="text-lg">{tweet.likeCount}</p>
+              </div>
             </div>
           </div>
-          <div className="flex-1">
-            <div
-              onClick={() => setLiked(!liked)}
-              className={`inline-flex items-center gap-2 cursor-pointer transition-colors duration-300 ease-in-out ${
-                liked && "text-red-500"
-              }`}
-            >
-              <FontAwesomeIcon icon={liked ? faHeartSolid : faHeart} />
-              <p className="text-lg">{tweet.likeCount}</p>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -43,8 +43,8 @@ export const TweetItem = ({ tweet, hideComments }: Props) => {
           </div>
         )}
         {!hideComments && (
-          <div className="flex mt-6 text-gray-500">
-            <div className="flex-1">
+          <div className="flex mt-6 text-gray-500 w-full">
+            <div className="flex flex-1 justify-center">
               <Link href={`/tweet/${tweet.id}`}>
                 <div className="inline-flex items-center gap-2 cursor-pointer">
                   <FontAwesomeIcon icon={faComment} />
@@ -52,13 +52,13 @@ export const TweetItem = ({ tweet, hideComments }: Props) => {
                 </div>
               </Link>
             </div>
-            <div className="flex-1">
+            <div className="flex flex-1 justify-center">
               <div className="inline-flex items-center gap-2 cursor-pointer">
                 <FontAwesomeIcon icon={faRetweet} />
                 <p className="text-lg">{tweet.retweetCount}</p>
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex flex-1 justify-center">
               <div
                 onClick={() => setLiked(!liked)}
                 className={`inline-flex items-center gap-2 cursor-pointer transition-colors duration-300 ease-in-out ${

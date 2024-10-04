@@ -8,7 +8,7 @@ export const TweetPost = () => {
   const handleImageUpload = () => {};
   const handlePostClick = () => {};
   return (
-    <div className="flex gap-6 px-8 py-6 border-b-2 border-gray-900">
+    <div className="flex gap-6 px-8 py-6 border-2 bg-black border-gray-900 rounded-2xl">
       <div>
         <img
           src={user.avatar}

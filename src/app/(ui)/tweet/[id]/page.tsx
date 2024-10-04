@@ -12,7 +12,7 @@ export default function Page() {
       <TweetItem tweet={tweet} />
 
       <div className="border-b-2 border-gray-900">
-        <div className="border-y-8 border-gray-900">
+        <div className="border-y-4 border-gray-900 bg-gray-900">
           <TweetPost />
         </div>
         <TweetItem tweet={tweet} hideComments />

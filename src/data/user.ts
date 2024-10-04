@@ -6,6 +6,6 @@ export const user: User = {
   avatar: `https://ui-avatars.com/api/?name=Gabriel+Guarini&background=random&size=100`,
   bio: "Uma bio de teste qualquer",
   cover: "https://picsum.photos/300/200",
-  link: "https://gabrielrguarini.vercel.app",
+  link: "https://gabrielguarini.vercel.app",
   postCount: 10,
 };

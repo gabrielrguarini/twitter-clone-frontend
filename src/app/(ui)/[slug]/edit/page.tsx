@@ -1,4 +1,3 @@
-import { ProfileFeed } from "@/components/profile/profile-feed";
 import { Button } from "@/components/ui/button";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { Input } from "@/components/ui/input";
@@ -56,7 +55,7 @@ export default function Edit() {
           <p className="text-lg text-gray-500">Link</p>
           <Input name="link" value={user.name} placeholder="Digite um linnk" />
         </label>
-        <Button size={3}>Salvar alterações</Button>
+        <Button size={1}>Salvar alterações</Button>
       </section>
     </div>
   );

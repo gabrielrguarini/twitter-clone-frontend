@@ -15,8 +15,8 @@ type Props = {
 export const TweetItem = ({ tweet, hideComments }: Props) => {
   const [liked, setLiked] = useState(tweet.liked);
   return (
-    <div className="flex gap-2 p-6 border-b-2 border-gray-900">
-      <div>
+    <div className="flex flex-col gap-2 p-6 border-b-2 border-gray-900">
+      <div className="flex items-center gap-4">
         <Link href={`/@${tweet.user.slug}`}>
           <img
             src={tweet.user.avatar}
@@ -24,17 +24,19 @@ export const TweetItem = ({ tweet, hideComments }: Props) => {
             className="size-10 rounded-full"
           />
         </Link>
-      </div>
-      <div className="flex-1">
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="font-bold text-lg">
-            <Link href={`/@${tweet.user.slug}`}>{tweet.user.name}</Link>
-          </div>
-          <div className="text-xs text-gray-500">
-            @{tweet.user.slug} - {formatRelativeTime(tweet.createdAt)}
+        <div className="flex flex-wrap items-center gap-3 ">
+          <div className="flex flex-col">
+            <div className="font-bold">
+              <Link href={`/@${tweet.user.slug}`}>{tweet.user.name}</Link>
+            </div>
+            <div className="text-xs text-gray-500">
+              @{tweet.user.slug} - {formatRelativeTime(tweet.createdAt)}
+            </div>
           </div>
         </div>
-        <div className="py-4 text-lg">{tweet.body}</div>
+      </div>
+      <div className="flex-1">
+        <div className="py-4">{tweet.body}</div>
         {tweet.image && (
           <div className="w-full">
             <img src={tweet.image} alt="" className="w-full rounded-2xl" />

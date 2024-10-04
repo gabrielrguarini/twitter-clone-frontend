@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div>
       <GeneralHeader backHref="/">
-        <div className="font-bold text-lg">{user.name}</div>
+        <div className="font-bold text-base">{user.name}</div>
         <div className="text-xs text-gray-500">{user.postCount} posts</div>
       </GeneralHeader>
       <section className="border-b-2 border-gray-900">
@@ -40,23 +40,23 @@ export default function Page() {
           )}
         </div>
         <div className="px-6 mt-4">
-          <div className="text-xl font-bold">{user.name}</div>
-          <div className="text-gray-500">@{user.slug}</div>
-          <div className="py-5 text-lg text-gray-500">@{user.bio}</div>
+          <div className="font-bold">{user.name}</div>
+          <div className="text-gray-500 text-sm">@{user.slug}</div>
+          <div className="py-2 text-gray-500">@{user.bio}</div>
           {user.link && (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center text-sm">
               <FontAwesomeIcon icon={faLink} className="size-5" />
               <Link href={user.link} className="text-blue-300" target="_blank">
                 {user.link}
               </Link>
             </div>
           )}
-          <div className="my-5 flex gap-6">
-            <p className="text-xl text-gray-500">
+          <div className="my-2 flex gap-6">
+            <p className="text-gray-500">
               <span className="text-white">99 </span>
               Seguindo
             </p>
-            <p className="text-xl text-gray-500">
+            <p className="text-gray-500">
               <span className="text-white">99 </span>
               Seguidores
             </p>
